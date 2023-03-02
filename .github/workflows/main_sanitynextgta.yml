@@ -52,7 +52,7 @@ jobs:
           id: deploy-to-webapp
           uses: azure/webapps-deploy@v2
           with:
-            app-name: 'NextGTA'
+            app-name: 'SanityNextGTA'
             slot-name: 'Production'
-            publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_4B5A9742390C41D9BF0E0432F3D656BB }}
+            publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_1DBA910AF6424816940E97C0E7CB4CD6 }}            
             package: next.zip
