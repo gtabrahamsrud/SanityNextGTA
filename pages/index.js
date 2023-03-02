@@ -1,4 +1,4 @@
-// import { createClient } from "next-sanity";
+import { createClient } from "next-sanity";
 
 export default function IndexPage({ pets }) {
   return (
@@ -8,7 +8,7 @@ export default function IndexPage({ pets }) {
       </header>
       <main>
         <h2>Pets</h2>
-        {/* {pets.length > 0 && (
+        {pets.length > 0 && (
           <ul>
             {pets.map((pet) => (
               <li key={pet._id}>{pet?.name} gender: {pet?.gender} weight:{pet?.weight}</li>
@@ -24,25 +24,25 @@ export default function IndexPage({ pets }) {
               correctly
             </p>
           </div>
-        )} */}
+        )}
       </main>
     </>
   );
 }
 
-// const client = createClient({
-//   projectId: "1suircmx",
-//   dataset: "production",
-//   apiVersion: "2023-02-16",
-//   useCdn: false
-// });
+const client = createClient({
+  projectId: "1suircmx",
+  dataset: "production",
+  apiVersion: "2023-02-16",
+  useCdn: false
+});
 
-// export async function getStaticProps() {
-//   const pets = await client.fetch(`*[_type == "pet"]`);
+export async function getStaticProps() {
+  const pets = await client.fetch(`*[_type == "pet"]`);
 
-//   return {
-//     props: {
-//       pets
-//     }
-//   };
-// }
+  return {
+    props: {
+      pets
+    }
+  };
+}
